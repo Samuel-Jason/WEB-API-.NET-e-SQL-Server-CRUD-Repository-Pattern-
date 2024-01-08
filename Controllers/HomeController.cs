@@ -13,7 +13,7 @@ namespace WebApi.Controllers
 
         [Route("api/[controller]")]
         [HttpGet]
-        public async Task<IActionResult> GetAll(Funcionario funcionario)
+        public async Task<IActionResult> GetAll(FuncionarioModel funcionario)
         {
             if (ModelState.IsValid)
             {
@@ -26,7 +26,7 @@ namespace WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddFuncionario(string nome, string idade)
         {
-            var pessoa = new Funcionario(nome, idade);
+            var pessoa = new FuncionarioModel(nome, idade);
 
             var lista = await pessoa.ObterFuncionarios();
             lista.Add(pessoa);
@@ -35,7 +35,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(int id, [FromBody] Funcionario funcionario)
+        public async Task<IActionResult> Update(int id, [FromBody] FuncionarioModel funcionario)
         {
             var funcionariosExistente = funcionario;
 
@@ -45,7 +45,7 @@ namespace WebApi.Controllers
             return Ok(funcionariosExistente);
         }
 
-        private async Task<IActionResult> ObterPorId(int id, [FromBody] Funcionario funcionario)
+        private async Task<IActionResult> ObterPorId(int id, [FromBody] FuncionarioModel funcionario)
         {
                 var listaFuncionario = await funcionario.ObterFuncionarios();
 

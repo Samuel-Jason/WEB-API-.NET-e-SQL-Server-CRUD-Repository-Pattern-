@@ -10,6 +10,6 @@ namespace WebApi.DataContext
 
         }
 
-        public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<FuncionarioModel> Funcionarios { get; set; }
     }
 }

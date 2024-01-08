@@ -6,13 +6,13 @@ using WebApi.Enums;
 
 namespace WebApi.Model
 {
-    public class Funcionario
+    public class FuncionarioModel
     {
-        public Funcionario()
+        public FuncionarioModel()
         {
         }
 
-        public Funcionario(string nome, string idade)
+        public FuncionarioModel(string nome, string idade)
         {
             Nome = nome;
             Idade = idade;
@@ -30,17 +30,17 @@ namespace WebApi.Model
         public string Idade { get; set; }
         public string? Email { get; set; }
 
-        public async Task<List<Funcionario>> ObterFuncionarios()
+        public async Task<List<FuncionarioModel>> ObterFuncionarios()
         {
             Random random = new Random();
 
-            return new List<Funcionario>
+            return new List<FuncionarioModel>
             {
-                new Funcionario("Funcionario1", random.Next(18, 60).ToString()),
-                new Funcionario("Funcionario2", random.Next(18, 60).ToString()),
-                new Funcionario("Funcionario3", random.Next(18, 60).ToString()),
-                new Funcionario("Funcionario4", random.Next(18, 60).ToString()),
-                new Funcionario("Funcionario5", random.Next(18, 60).ToString())
+                new FuncionarioModel("Funcionario1", random.Next(18, 60).ToString()),
+                new FuncionarioModel("Funcionario2", random.Next(18, 60).ToString()),
+                new FuncionarioModel("Funcionario3", random.Next(18, 60).ToString()),
+                new FuncionarioModel("Funcionario4", random.Next(18, 60).ToString()),
+                new FuncionarioModel("Funcionario5", random.Next(18, 60).ToString())
             };
         }
     }
